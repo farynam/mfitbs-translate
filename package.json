@@ -1,0 +1,11 @@
+{
+  "name": "mfitbs-translate",
+  "version": "1.0.0",
+  "description": "Translate json objects from stdin to stout based on supplied json mappings file.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Marcin Faryna",
+  "license": "Apache License 2.0"
+}
