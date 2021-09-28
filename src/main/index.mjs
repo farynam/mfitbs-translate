@@ -28,6 +28,15 @@ const translations = readConfiguration(config.translations);
 const translator = new Translator(translations);
 
 rl.on('line', function(jsonLine){
-    const inputJson = JSON.parse(jsonLine);
-    console.log(JSON.stringify(translator.translate(inputJson)));
+    try {
+        const toProcess = jsonLine.trim();
+        if (toProcess) {
+            const inputJson = JSON.parse(jsonLine);
+            console.log(JSON.stringify(translator.translate(inputJson)));
+        }
+    } catch (err) {
+        console.error(`json string: ${jsonLine}`);
+        console.error(err);
+        throw err;
+    }
 })
